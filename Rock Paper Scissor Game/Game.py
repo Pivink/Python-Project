@@ -23,6 +23,9 @@ def result(n):
 def play_game():
     print("Do you want to play the game?")
     want = int(input("0 For Quit\n1 For Play\nEnter your choice: "))
+    if want == 0:
+        print("As your wish!")
+        return
     rounds = 3
     user_score, cpu_score = 0, 0
     
@@ -42,10 +45,7 @@ def play_game():
         print(f"Score - User: {user_score}, CPU: {cpu_score}")
         if 1 <= n <= 3:
             rounds -= 1
-    
-    if want == 0:
-        print("As your wish!")
-    elif user_score > cpu_score:
+    if user_score > cpu_score:
         print("Congratulations! You win the game!")
     elif user_score < cpu_score:
         print("You lose! Better luck next time.")
